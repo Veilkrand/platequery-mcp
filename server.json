@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.platequery/plate-api",
+  "description": "License plate lookup and vehicle plate search API for AI agents: check for messages people have posted about a plate and public ALPR (automated license plate reader) sighting history from Flock Safety cameras, by U.S. state or region. OAuth 2.1 (PKCE + dynamic client registration) -- sign in with your PlateQuery account, no manual API key needed.",
+  "title": "PlateQuery API",
+  "websiteUrl": "https://api.platequery.com/",
+  "repository": {
+    "url": "https://github.com/Veilkrand/platequery-mcp",
+    "source": "github"
+  },
+  "version": "1.0.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.platequery.com/mcp"
+    }
+  ]
+}
