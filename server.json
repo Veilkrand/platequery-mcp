@@ -1,7 +1,7 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.platequery/plate-api",
-  "description": "License plate lookup and vehicle plate search API for AI agents: check for messages people have posted about a plate and public ALPR (automated license plate reader) sighting history from Flock Safety cameras, by U.S. state or region. OAuth 2.1 (PKCE + dynamic client registration) -- sign in with your PlateQuery account, no manual API key needed.",
+  "description": "License plate lookup API for AI agents, built on PlateQuery: read messages other people left about a vehicle -- reporting bad driving, illegal parking, or a note for the owner -- plus public ALPR (automated license plate reader) sighting history from Flock Safety cameras, by U.S. state or region. OAuth 2.1 (PKCE + dynamic client registration) -- sign in with your PlateQuery account, no manual API key needed.",
   "title": "PlateQuery MCP — US License Plate & Vehicle Information",
   "websiteUrl": "https://api.platequery.com/",
   "repository": {

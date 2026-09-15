@@ -1,10 +1,12 @@
 # PlateQuery MCP — US License Plate & Vehicle Information
 
-**License plate lookup for AI agents.** PlateQuery exposes a remote [Model
-Context Protocol](https://modelcontextprotocol.io) server that lets an
-agent check whether a license plate has messages posted about it, or
-public ALPR (automated license plate reader) sighting history from the
-Flock Safety camera network — by U.S. state or region.
+**License plate lookup for AI agents, built on [PlateQuery](https://platequery.com/)**
+— the license plate lookup site people use to notify vehicle owners,
+report bad driving, or flag illegal parking. This [Model Context
+Protocol](https://modelcontextprotocol.io) server lets an agent read
+those same messages for any U.S. license plate, plus public ALPR
+(automated license plate reader) sighting history from the Flock Safety
+camera network, by state or region.
 
 - **Website:** https://platequery.com/
 - **API docs / pricing:** https://api.platequery.com/
