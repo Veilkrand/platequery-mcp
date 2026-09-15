@@ -1,4 +1,4 @@
-# PlateQuery MCP Server
+# PlateQuery MCP — US License Plate & Vehicle Information
 
 **License plate lookup for AI agents.** PlateQuery exposes a remote [Model
 Context Protocol](https://modelcontextprotocol.io) server that lets an
