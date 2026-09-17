@@ -26,6 +26,7 @@ is closed-source.
 | `lookup_plate` | 1 credit | Quick summary for one plate: privacy status, the latest 3 messages (plus a total count), and a count of ALPR mentions, if any are public. |
 | `list_plate_messages` | 1 credit | Full, paginated list of messages posted about a plate. |
 | `list_plate_alpr_mentions` | 1 credit | Full, paginated ALPR search history for a plate, including the searching agency and source. |
+| `post_plate_message` | Free | Post a new message about a plate -- e.g. "reported for speeding" -- optionally with vehicle make/model/year/color and an approximate location. Requires the `write` scope. See [Posting messages](#posting-messages) below. |
 
 A plate marked private by its owner returns zeroed messages/mentions to
 everyone except that owner. Free plan grants a starting credit balance on
@@ -33,6 +34,22 @@ signup; additional credits are purchased in bulk packages — see
 [api-settings](https://platequery.com/api-settings/) for current pricing.
 Paid tools are rate-limited per account; call `check_credits` as often as
 you like to check balance without spending a credit.
+
+### Posting messages
+
+`post_plate_message` is free but deliberately conservative, since it's
+the only tool that writes anything:
+
+- Requires a PlateQuery account with a **confirmed email**.
+- Rate-limited: 2 posts/minute, 10 posts/day, 3 posts/day about the same
+  plate.
+- **Not published immediately.** Every post goes into the same
+  moderation queue a website submission does -- it's invisible (and the
+  plate's followers aren't notified) until a human moderator approves it.
+- `vehicle_make`/`vehicle_model`/`vehicle_year`/`vehicle_color` and
+  `location` are all optional free text -- `location` should be an
+  approximate description (e.g. "Hwy 37 near Los Altos, CA" or a
+  cross-street), never precise GPS coordinates.
 
 ## Authentication
 
@@ -52,6 +69,12 @@ can connect by:
 
 No client secret or pre-issued API key is needed — sign-in happens in
 the browser the first time an agent connects.
+
+Two scopes exist: `read` (the default -- covers every tool except
+`post_plate_message`) and `write` (required for `post_plate_message`,
+opt-in only). A client must explicitly request `write` at connect time to
+be able to post; an existing `read`-only connection can't post without
+reconnecting.
 
 ## Adding it to an MCP client
 
