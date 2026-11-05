@@ -66,10 +66,9 @@ can connect by:
 3. Registering itself dynamically (RFC 7591) and running the standard
    Authorization Code + PKCE flow.
 4. Signing in with (or creating) a PlateQuery account when prompted.
-5. Approving access on the consent screen, if one appears. It shows the
-   app's self-chosen name and where its callback goes, labeled as
-   unverified. It's skipped only for known hosted MCP clients (Claude,
-   ChatGPT) and loopback callbacks.
+5. Approving access on the consent screen, which shows the app's
+   self-chosen name and where its callback goes, labeled as unverified.
+   It's skipped only for loopback callbacks.
 
 No client secret or pre-issued API key is needed — sign-in happens in
 the browser the first time an agent connects.
